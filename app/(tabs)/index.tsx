@@ -1,11 +1,11 @@
 import { Image } from 'expo-image';
 import { StyleSheet } from 'react-native';
 
+import { LanguageSwitcher } from '@/components/language-switcher';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { useLanguage } from '@/hooks/use-language';
-import { LanguageSwitcher } from '@/components/language-switcher';
 
 export default function HomeScreen() {
   const { t } = useLanguage();

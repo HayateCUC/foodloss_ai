@@ -1,5 +1,5 @@
-import { createClient } from '@supabase/supabase-js';
 import { SUPABASE_CONFIG } from '@/constants/supabase';
+import { createClient } from '@supabase/supabase-js';
 
 export const supabase = createClient(
   SUPABASE_CONFIG.url,

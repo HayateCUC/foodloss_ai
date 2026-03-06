@@ -1,6 +1,6 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { getLocales } from 'expo-localization';
 import { LanguageCode, translations } from '@/constants/translations';
+import { getLocales } from 'expo-localization';
+import React, { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 
 interface LanguageContextType {
   language: LanguageCode;

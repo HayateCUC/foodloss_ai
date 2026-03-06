@@ -1,12 +1,11 @@
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { CameraType, CameraView, useCameraPermissions } from 'expo-camera';
-import React, { useRef, useState } from 'react';
-import { Alert, StyleSheet, Text, TouchableOpacity, View, ActivityIndicator } from 'react-native';
 import { useLanguage } from '@/hooks/use-language';
 import { analyzeFood, uploadImage } from '@/services/foodAnalysis';
-import { saveFoodItem, getCurrentUser } from '@/services/supabase';
-import { supabase } from '@/services/supabase';
+import { getCurrentUser, saveFoodItem, supabase } from '@/services/supabase';
+import { CameraType, CameraView, useCameraPermissions } from 'expo-camera';
+import React, { useRef, useState } from 'react';
+import { ActivityIndicator, Alert, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function ProviderScreen() {
   const [facing, setFacing] = useState<CameraType>('back');

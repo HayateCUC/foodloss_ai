@@ -1,10 +1,10 @@
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import React, { useEffect, useState } from 'react';
-import { FlatList, StyleSheet, View, ActivityIndicator } from 'react-native';
 import { useLanguage } from '@/hooks/use-language';
 import { getAvailableFoodItems } from '@/services/supabase';
 import { useFocusEffect } from '@react-navigation/native';
+import React, { useState } from 'react';
+import { ActivityIndicator, FlatList, StyleSheet, View } from 'react-native';
 
 interface FoodItem {
   id: string;

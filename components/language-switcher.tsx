@@ -1,9 +1,9 @@
-import React from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { useLanguage } from '@/hooks/use-language';
 import { LanguageCode } from '@/constants/translations';
+import { useLanguage } from '@/hooks/use-language';
+import React from 'react';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 const LANGUAGES: { code: LanguageCode; label: string }[] = [
   { code: 'ja', label: '日本語' },
