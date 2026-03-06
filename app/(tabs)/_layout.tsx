@@ -1,51 +1,59 @@
+import { Ionicons } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
-import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-import { useLanguage } from '@/hooks/use-language';
+import { StyleSheet } from 'react-native';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-  const { t } = useLanguage();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: '#2D6A4F',
+        tabBarInactiveTintColor: '#A0A0A0',
+        tabBarStyle: {
+          backgroundColor: '#FAFAF7',
+          borderTopWidth: 1,
+          borderTopColor: '#E8E8E0',
+          height: 64,
+          paddingBottom: 10,
+          paddingTop: 6,
+        },
+        tabBarLabelStyle: {
+          fontSize: 10,
+          fontWeight: '600',
+          letterSpacing: 0.5,
+        },
         headerShown: false,
-        tabBarButton: HapticTab,
       }}
     >
       <Tabs.Screen
         name="index"
         options={{
-          title: t('tabs.home'),
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="house.fill" color={color} />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="provider"
-        options={{
-          title: t('tabs.provider'),
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="camera.fill" color={color} />
+          tabBarLabel: 'ホーム',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" size={size} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name="consumer"
         options={{
-          title: t('tabs.consumer'),
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="list.bullet" color={color} />
+          tabBarLabel: '消費者',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person-outline" size={size} color={color} />
           ),
         }}
       />
+      <Tabs.Screen
+        name="provider"
+        options={{
+          tabBarLabel: '提供者',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="storefront-outline" size={size} color={color} />
+          ),
+        }}
+      />
+     
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({});
